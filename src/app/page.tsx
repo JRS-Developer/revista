@@ -4,6 +4,7 @@ import Image from "next/image";
 import GerenciaImg1 from "@/assets/images/gerencia-1.jpeg";
 import { ReactNode, Suspense } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Laberinto from "@/components/Juegos/Laberinto";
 
 const Article = ({
   title,
@@ -603,9 +604,9 @@ const slides: SlideType[] = [
   },
   {
     id: 3,
-    content: "Slide 3",
+    content: <Laberinto />,
     thumbnail: {
-      title: "Slide 3",
+      title: "Laberinto",
       previewImg: undefined,
     },
   },

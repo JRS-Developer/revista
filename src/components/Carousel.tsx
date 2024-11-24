@@ -19,10 +19,10 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import IconButton from "./IconButton";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import { Button } from "@/ui/button";
 
 type UsePrevNextButtonsType = {
   prevBtnDisabled: boolean;
@@ -90,14 +90,16 @@ const CarouselBtn = ({
   onClick: () => unknown;
 }) => {
   return (
-    <IconButton
+    <Button
+      size="icon"
+      variant="outline"
       aria-label={type === "next" ? "Next Slide" : "Prev Slide"}
       onClick={onClick}
       disabled={disabled}
       className="pointer-events-auto"
     >
       {type === "next" ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-    </IconButton>
+    </Button>
   );
 };
 
@@ -105,18 +107,23 @@ const CarouselSlide = ({
   children,
   showThumbnails,
   zenMode,
+  isSelected,
 }: {
   children: ReactNode;
   showThumbnails: boolean;
   zenMode: boolean;
+  isSelected: boolean;
 }) => {
   return (
-    <div className={`flex-[0_0_100%] min-w-0`}>
+    <div
+      className={`flex-[0_0_100%] min-w-0`}
+      tabIndex={isSelected ? undefined : -1}
+    >
       <div
         className={`${zenMode ? "scale-100" : "scale-[97%]"} h-full transition-transform`}
       >
         <div
-          className={`h-full overflow-hidden border-2 transition-all ${zenMode ? "rounded-none border-transparent" : "rounded-3xl border-gray-500/50"}`}
+          className={`h-full overflow-hidden border-2 transition-all ${zenMode ? "rounded-none border-transparent" : "rounded-3xl border-border"}`}
           style={
             showThumbnails
               ? {
@@ -224,8 +231,9 @@ const Carousel = ({
   return (
     <div className="overflow-hidden h-full relative" ref={emblaMainRef}>
       <div className="flex h-full">
-        {slides.map((s) => (
+        {slides.map((s, index) => (
           <CarouselSlide
+            isSelected={index === selectedIndex}
             showThumbnails={shouldShowThumbnails}
             key={s.id}
             zenMode={zenMode}
@@ -255,7 +263,7 @@ const Carousel = ({
               return (
                 <button
                   key={slide.id}
-                  className={`flex-[0_0_33%] md:flex-[0_0_20%] ${zenMode ? "pointer-events-none" : ""} ${isSelected ? "border-white" : "border-gray-500/50"} ${isLast ? "" : "mr-4"} rounded-xl border-2 h-[100px] relative overflow-hidden`}
+                  className={`flex-[0_0_33%] md:flex-[0_0_20%] ${zenMode ? "pointer-events-none" : ""} ${isSelected ? "dark:border-white border-black" : "border-border"} ${isLast ? "" : "mr-4"} rounded-xl border-2 h-[100px] relative overflow-hidden`}
                   onClick={() => onThumbClick(index)}
                   tabIndex={zenMode || !shouldShowThumbnails ? -1 : undefined}
                 >
@@ -269,7 +277,7 @@ const Carousel = ({
                   ) : null}
 
                   <div
-                    className={`flex justify-center items-center p-4 px-2 h-full font-semibold text-xs md:text-base ${slide.thumbnail?.previewImg ? "bg-black/80" : ""}`}
+                    className={`flex justify-center items-center p-4 px-2 h-full font-semibold text-xs md:text-base ${slide.thumbnail?.previewImg ? "bg-black/50 text-white dark:text-foreground" : ""}`}
                   >
                     {slide.thumbnail?.title ?? `Slide ${index + 1}`}
                   </div>
@@ -280,14 +288,16 @@ const Carousel = ({
         </div>
         <div className="flex w-full justify-center px-4">
           {!zenMode ? (
-            <IconButton
+            <Button
+              size="icon"
+              variant="outline"
               onClick={() => {
                 push(areExternalSlides ? "/" : "/external");
               }}
               className="pointer-events-auto"
             >
               <RefreshCcwIcon />
-            </IconButton>
+            </Button>
           ) : null}
           <div className="flex items-center gap-4 lg:gap-10 justify-center flex-1">
             {!zenMode ? (
@@ -299,13 +309,15 @@ const Carousel = ({
                     onClick={onPrevButtonClick}
                   />
                 ) : null}
-                <IconButton
+                <Button
+                  size="icon"
+                  variant="outline"
                   aria-label="Show thumbnails"
                   onClick={() => setShowThumbnails((prev) => !prev)}
                   className="pointer-events-auto"
                 >
                   {shouldShowThumbnails ? <XIcon /> : <MenuIcon />}
-                </IconButton>
+                </Button>
                 {!shouldShowThumbnails ? (
                   <CarouselBtn
                     type="next"
@@ -317,14 +329,16 @@ const Carousel = ({
             ) : null}
           </div>
 
-          <IconButton
+          <Button
+            size="icon"
+            variant="outline"
             onClick={() => {
               setZenMode((prev) => !prev);
             }}
             className="pointer-events-auto"
           >
             {!zenMode ? <EyeIcon /> : <EyeOffIcon />}
-          </IconButton>
+          </Button>
         </div>
       </div>
     </div>
