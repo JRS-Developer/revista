@@ -34,6 +34,7 @@ type UsePrevNextButtonsType = {
 export type SlideType = {
   id: number | string;
   content: ReactNode;
+  noPadding?: boolean;
   thumbnail: {
     title: string;
     previewImg:
@@ -108,11 +109,13 @@ const CarouselSlide = ({
   showThumbnails,
   zenMode,
   isSelected,
+  disablePadding,
 }: {
   children: ReactNode;
   showThumbnails: boolean;
   zenMode: boolean;
   isSelected: boolean;
+  disablePadding: boolean;
 }) => {
   return (
     <div
@@ -123,16 +126,11 @@ const CarouselSlide = ({
         className={`${zenMode ? "scale-100" : "scale-[97%]"} h-full transition-transform`}
       >
         <div
-          className={`h-full overflow-hidden border-2 transition-all ${zenMode ? "rounded-none border-transparent" : "rounded-3xl border-border"}`}
-          style={
-            showThumbnails
-              ? {
-                  transform: "translateY(-240px)",
-                }
-              : undefined
-          }
+          className={`h-full overflow-hidden  transition-all ${zenMode ? "rounded-none border-transparent" : "border-2 rounded-3xl border-border"} ${showThumbnails ? "translate-y-[-240px] md:translate-y-[-300px]" : ""}`}
         >
-          <div className="h-full w-full overflow-y-auto p-4 pt-10 pb-24 md:p-10 lg:p-20 lg:pb-24">
+          <div
+            className={`h-full w-full overflow-y-auto ${disablePadding ? "" : "p-4 pt-10 pb-24 md:p-10 lg:p-20 lg:pb-24"}`}
+          >
             {children}
           </div>
         </div>
@@ -237,6 +235,7 @@ const Carousel = ({
             showThumbnails={shouldShowThumbnails}
             key={s.id}
             zenMode={zenMode}
+            disablePadding={!!s.noPadding}
           >
             {ready ? (
               s.content
@@ -263,7 +262,7 @@ const Carousel = ({
               return (
                 <button
                   key={slide.id}
-                  className={`flex-[0_0_33%] md:flex-[0_0_20%] ${zenMode ? "pointer-events-none" : ""} ${isSelected ? "dark:border-white border-black" : "border-border"} ${isLast ? "" : "mr-4"} rounded-xl border-2 h-[100px] relative overflow-hidden`}
+                  className={`flex-[0_0_45%] md:flex-[0_0_20%] ${zenMode ? "pointer-events-none" : ""} ${isSelected ? "dark:border-white border-black" : "border-border"} ${isLast ? "" : "mr-4"} rounded-xl border-2 h-[100px] md:h-[150px] relative overflow-hidden`}
                   onClick={() => onThumbClick(index)}
                   tabIndex={zenMode || !shouldShowThumbnails ? -1 : undefined}
                 >
