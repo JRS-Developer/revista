@@ -82,9 +82,14 @@ const slides: SlideType[] = [
           <Image src={PortadaRevista} alt="" fill className="object-cover" />
         </div>
         <div className="flex justify-center items-center h-full w-full bg-black/80 px-4 lg:px-80">
-          <h1 className="text-4xl md:text-7xl md:leading-normal text-center font-semibold">
-            Gerencia y Tecnología en Sectores Públicos y Privados
-          </h1>
+          <div>
+            <h1 className="text-4xl md:text-7xl text-center font-semibold">
+              Gerencia y Tecnología en Sectores Públicos y Privados
+            </h1>
+            <h2 className="text-center text-sm md:text-2xl font-semibold mt-2">
+              Ciudad de Santa Ana de Coro, Estado Falcón
+            </h2>
+          </div>
         </div>
       </div>
     ),
@@ -575,7 +580,7 @@ const slides: SlideType[] = [
               Project, Jira y Trello para organizar, monitorear tareas, asignar
               recursos y establecer cronogramas, estas herramientas permiten una
               visión clara y detallada del progreso en tiempo real, facilitando
-              la identificación de posibles cuellos de botella y la
+              la identificaci��n de posibles cuellos de botella y la
               implementación de estrategias correctivas cuando sea necesario.
               Este enfoque estructurado es esencial para mantener el control del
               proyecto y asegurar que los objetivos se alcancen de manera
