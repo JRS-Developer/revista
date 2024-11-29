@@ -81,8 +81,8 @@ const slides: SlideType[] = [
         <div className="absolute z-[-1] h-full w-full overflow-hidden">
           <Image src={PortadaRevista} alt="" fill className="object-cover" />
         </div>
-        <div className="flex justify-center items-center h-full w-full bg-black/80">
-          <h1 className="text-4xl md:text-[96px] md:leading-normal text-center font-semibold px-4 md:px-40">
+        <div className="flex justify-center items-center h-full w-full bg-black/80 px-4 lg:px-80">
+          <h1 className="text-4xl md:text-7xl md:leading-normal text-center font-semibold">
             Gerencia y Tecnología en Sectores Públicos y Privados
           </h1>
         </div>
