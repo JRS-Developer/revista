@@ -57,7 +57,10 @@ const slides: SlideType[] = [
     noPadding: true,
     thumbnail: {
       title: "Gerencia y Tecnología en Sectores Públicos y Privados",
-      previewImg: undefined,
+      previewImg: {
+        src: PortadaRevista,
+        alt: "",
+      },
     },
     content: (
       <div className="h-full w-full relative">
