@@ -6,10 +6,10 @@ import { ReactNode, Suspense } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Laberinto from "@/components/Juegos/Laberinto";
 import Script from "next/script";
-import CanTV1 from "@/assets/images/CanTV-1.jpeg";
-import CanTV2 from "@/assets/images/CanTV-2.jpeg";
-import CanTV3 from "@/assets/images/CanTV-3.jpeg";
-import CanTV4 from "@/assets/images/CanTV-4.jpeg";
+import CanTV1 from "@/assets/images/Cantv-1.jpeg";
+import CanTV2 from "@/assets/images/Cantv-2.jpeg";
+import CanTV3 from "@/assets/images/Cantv-3.jpeg";
+import CanTV4 from "@/assets/images/Cantv-4.jpeg";
 import PortadaRevista from "@/assets/images/Portada-revista.jpeg";
 import LogoUnefa from "@/assets/images/Logo-Unefa.png";
 
@@ -32,7 +32,7 @@ const Article = ({
   content: ReactNode;
 }) => {
   return (
-    <div className="prose-lg  md:prose-xl prose max-w-none dark:prose-invert prose-img:rounded-lg prose-h1:text-5xl">
+    <div className="prose-lg  md:prose-xl prose max-w-none dark:prose-invert prose-img:rounded-lg prose-h1:text-5xl prose-img:w-full">
       <h1 className="mb-0">{title}</h1>
 
       <p className="mt-1 prose-base">Autores: {autores.join(", ")}</p>
@@ -43,6 +43,7 @@ const Article = ({
           alt={portada.alt}
           height={600}
           className="float-right ml-8"
+          quality={100}
         />
       ) : null}
 
@@ -580,7 +581,7 @@ const slides: SlideType[] = [
               Project, Jira y Trello para organizar, monitorear tareas, asignar
               recursos y establecer cronogramas, estas herramientas permiten una
               visión clara y detallada del progreso en tiempo real, facilitando
-              la identificaci��n de posibles cuellos de botella y la
+              la identificación de posibles cuellos de botella y la
               implementación de estrategias correctivas cuando sea necesario.
               Este enfoque estructurado es esencial para mantener el control del
               proyecto y asegurar que los objetivos se alcancen de manera
@@ -637,13 +638,17 @@ const slides: SlideType[] = [
 
             <h2>Imágenes:</h2>
 
-            {cantvImagenes.map((image, index) => (
-              <Image
-                src={image}
-                alt={`CanTV imagen ${index + 1}`}
-                key={image.src}
-              />
-            ))}
+            <div className="md:grid grid-cols-2 gap-10">
+              {cantvImagenes.map((image, index) => (
+                <Image
+                  src={image}
+                  alt={`CanTV imagen ${index + 1}`}
+                  key={image.src}
+                  quality={100}
+                  className="h-full object-cover"
+                />
+              ))}
+            </div>
 
             <h2>Videos:</h2>
 
