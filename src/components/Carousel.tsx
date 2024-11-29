@@ -204,14 +204,36 @@ const Carousel = ({
     },
     [emblaMainApi, emblaThumbsApi],
   );
+
+  const stopVideos = useCallback(() => {
+    const iframes = document.querySelectorAll("iframe");
+    const videos = document.querySelectorAll("video");
+
+    iframes.forEach((iframe) => {
+      iframe.src = iframe.src;
+    });
+
+    videos.forEach((video) => {
+      video.pause();
+    });
+  }, []);
+
   const onSelect = useCallback(() => {
     if (!emblaMainApi || !emblaThumbsApi) return;
     const selectedIndex = emblaMainApi.selectedScrollSnap();
     setSelectedIndex(selectedIndex);
     emblaThumbsApi.scrollTo(selectedIndex);
 
+    stopVideos();
     push(pathname + "?" + createQueryString("slide", selectedIndex.toString()));
-  }, [createQueryString, emblaMainApi, emblaThumbsApi, pathname, push]);
+  }, [
+    createQueryString,
+    emblaMainApi,
+    emblaThumbsApi,
+    pathname,
+    push,
+    stopVideos,
+  ]);
 
   useEffect(() => {
     if (!emblaMainApi) return;
