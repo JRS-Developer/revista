@@ -3,7 +3,7 @@
 import Carousel, { SlideType } from "@/components/Carousel";
 import Image from "next/image";
 // import GerenciaImg1 from "@/assets/images/gerencia-1.jpeg";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Laberinto from "@/components/Juegos/Laberinto";
 import Script from "next/script";
@@ -1362,7 +1362,11 @@ const slides: SlideType[] = [
 ];
 
 const MainPage = () => {
-  return <Carousel slides={slides} areExternalSlides={false} />;
+  return (
+    <Suspense>
+      <Carousel slides={slides} areExternalSlides={false} />
+    </Suspense>
+  );
 };
 
 export default MainPage;
