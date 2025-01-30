@@ -12,6 +12,7 @@ import {
   EyeOffIcon,
 } from "lucide-react";
 import React, {
+  memo,
   ReactNode,
   useCallback,
   useEffect,
@@ -150,14 +151,14 @@ const Carousel = ({
   const { push } = useRouter();
   const searchParams = useSearchParams();
 
+  const slide = searchParams.get("slide");
   const searchSlide = useMemo(() => {
-    const slide = searchParams.get("slide");
     const numberSlide = Number.isNaN(Number(slide))
       ? defaultIndex
       : Number(slide);
 
     return numberSlide > slides.length ? defaultIndex : numberSlide;
-  }, [searchParams, slides.length]);
+  }, [slide, slides.length]);
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -218,18 +219,26 @@ const Carousel = ({
 
   const onSelect = useCallback(() => {
     if (!emblaMainApi || !emblaThumbsApi) return;
-    const selectedIndex = emblaMainApi.selectedScrollSnap();
-    setSelectedIndex(selectedIndex);
-    emblaThumbsApi.scrollTo(selectedIndex);
+    const newSelectedIndex = emblaMainApi.selectedScrollSnap();
+    setSelectedIndex(newSelectedIndex);
+    emblaThumbsApi.scrollTo(newSelectedIndex);
 
     stopVideos();
-    push(pathname + "?" + createQueryString("slide", selectedIndex.toString()));
+
+    if (selectedIndex !== newSelectedIndex) {
+      push(
+        pathname +
+          "?" +
+          createQueryString("slide", newSelectedIndex.toString()),
+      );
+    }
   }, [
     createQueryString,
     emblaMainApi,
     emblaThumbsApi,
     pathname,
     push,
+    selectedIndex,
     stopVideos,
   ]);
 
@@ -364,4 +373,4 @@ const Carousel = ({
   );
 };
 
-export default Carousel;
+export default memo(Carousel);

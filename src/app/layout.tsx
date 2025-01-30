@@ -24,9 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning style={{ height: "100%" }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ height: "100%" }}
       >
         <Providers>{children}</Providers>
       </body>
