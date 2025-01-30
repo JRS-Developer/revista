@@ -10,7 +10,6 @@ import {
   LoaderIcon,
   EyeIcon,
   EyeOffIcon,
-  RefreshCcwIcon,
 } from "lucide-react";
 import React, {
   ReactNode,
@@ -143,7 +142,6 @@ const defaultIndex = 0;
 
 const Carousel = ({
   slides,
-  areExternalSlides,
 }: {
   slides: SlideType[];
   areExternalSlides: boolean;
@@ -308,18 +306,18 @@ const Carousel = ({
           </div>
         </div>
         <div className="flex w-full justify-center px-4">
-          {!zenMode ? (
-            <Button
-              size="icon"
-              variant="outline"
-              onClick={() => {
-                push(areExternalSlides ? "/" : "/external");
-              }}
-              className="pointer-events-auto"
-            >
-              <RefreshCcwIcon />
-            </Button>
-          ) : null}
+          {/* {!zenMode ? ( */}
+          {/*   <Button */}
+          {/*     size="icon" */}
+          {/*     variant="outline" */}
+          {/*     onClick={() => { */}
+          {/*       push(areExternalSlides ? "/" : "/external"); */}
+          {/*     }} */}
+          {/*     className="pointer-events-auto" */}
+          {/*   > */}
+          {/*     <RefreshCcwIcon /> */}
+          {/*   </Button> */}
+          {/* ) : null} */}
           <div className="flex items-center gap-4 lg:gap-10 justify-center flex-1">
             {!zenMode ? (
               <>

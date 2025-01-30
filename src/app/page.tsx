@@ -10,10 +10,14 @@ import CanTV1 from "@/assets/images/Cantv-1.jpeg";
 import CanTV2 from "@/assets/images/Cantv-2.jpeg";
 import CanTV3 from "@/assets/images/Cantv-3.jpeg";
 import CanTV4 from "@/assets/images/Cantv-4.jpeg";
+import Corpo1 from "@/assets/images/CorpoElec 01.jpeg";
+import Corpo2 from "@/assets/images/CorpoElec 02.jpeg";
+import Corpo3 from "@/assets/images/CorpoElect-Entrevista.jpeg";
 import PortadaRevista from "@/assets/images/Portada-revista.jpeg";
 import LogoUnefa from "@/assets/images/Logo-Unefa.png";
 
 const cantvImagenes = [CanTV1, CanTV2, CanTV3, CanTV4];
+const corpoImagens = [Corpo1, Corpo2, Corpo3];
 
 const Article = ({
   title,
@@ -688,6 +692,306 @@ const slides: SlideType[] = [
   },
   {
     id: 3,
+    thumbnail: {
+      title:
+        "Evaluación Integral de CORPOELEC: Estructura, Tecnología y Gestión para el Futuro Energético",
+      previewImg: undefined,
+    },
+    content: (
+      <Article
+        title="Evaluación Integral de CORPOELEC: Estructura, Tecnología y Gestión para el Futuro Energético"
+        autores={[
+          "Harrison Bermudez",
+          "José Lara",
+          "Oscar López",
+          "José Prieto",
+        ]}
+        portada={undefined}
+        content={
+          <>
+            <p>
+              "El éxito de una empresa no radica solo en la tecnología que
+              adopta, sino en cómo alinea su estructura organizativa, gestiona
+              su talento humano y optimiza sus procesos; cuando estos pilares se
+              integran eficazmente, se crea una base sólida para la innovación y
+              la sostenibilidad en un entorno empresarial cada vez más
+              competitivo." (Bermúdez Harrison, 2024) Esta frase nos hace
+              entender la interdependencia que existe y resulta clave entender
+              para el éxito y modernización de una empresa, en este caso
+              Corpoelec situado en el estado Falcón, ciudad de Coro. Entendemos
+              que no basta con mejorar una sola área de manera aislada; la
+              verdadera transformación requiere una integración armoniosa entre
+              las tecnologías adoptadas, una estructura organizativa eficiente,
+              una gestión estratégica del talento humano y la optimización de
+              los procesos. La idea de que el avance tecnológico y
+              organizacional solo es efectivo si se apoya en una administración
+              sólida y colaborativa que promueva el crecimiento sostenible y la
+              competitividad, es clave para el futuro de Corpoelec.
+            </p>
+            <p>
+              Ahora bien, ¿Qué es Corpoelec? Esta es una empresa encargada de la
+              generación, transmisión y distribución de energía eléctrica en
+              Venezuela. Posee un áreainformática la cual desempeña un papel
+              fundamental en el funcionamiento eficiente y seguro de sus
+              operaciones. A lo largo de nuestra investigación estaremos
+              analizando su estructura, funciones, gestión de recursos humanos y
+              el estado actual de la tecnología en el área informática de
+              Corpoelec, con un enfoque particular en el Centro Estatal de
+              Despacho y desde el campo de la Ingeniería de Sistemas.
+            </p>
+            <p>
+              Como primer tópico tenemos la estructura del Área Informática en
+              Corpoelec, esta presenta una estructura jerárquica típica de las
+              grandes organizaciones. En la base se encuentran los técnicos y
+              especialistas en diversas áreas como redes, sistemas operativos,
+              bases de datos y seguridad informática. Estos profesionales se
+              encargan de la operación y mantenimiento de los sistemas
+              informáticos. Por encima de ellos se encuentran los jefes de
+              departamento, quienes coordinan las actividades de sus equipos y
+              reportan al gerente de informática.
+            </p>
+            <p>
+              En el caso del Centro Estatal de Despacho, la estructura
+              informática se divide en dos grandes áreas: informática y
+              telecomunicaciones. Esta división se justifica por la importancia
+              crítica de las comunicaciones en un centro de control operativo,
+              donde las redes de comunicaciones de Corpoelec son extensas y
+              complejas, y su buen funcionamiento resulta esencial para la
+              supervisión y control de la generación y distribución de energía
+              eléctrica a lo largo del país.
+            </p>
+            <p>
+              Por otra parte, tenemos las funciones del Área de Informática en
+              Corpoelec las cuales son múltiples y variadas. Entre las
+              principales podemos mencionar: Mantenimiento de Sistemas; incluye
+              la instalación, configuración y actualización de hardware y
+              software, así como la resolución de incidencias técnicas.
+              Desarrollo de Aplicaciones; desarrollo de software a medida para
+              atender las necesidades específicas de los diferentes
+              departamentos de la empresa. Seguridad Informática; protección de
+              los sistemas informáticos de la empresa contra ataques
+              cibernéticos y el acceso no autorizado. Soporte Técnico; atención
+              a los usuarios y resolución de sus problemas informáticos. Gestión
+              de Redes; diseño, implementación y mantenimiento de las redes de
+              comunicaciones de la empresa. Gestión de Recursos Humanos en el
+              Área Informática.
+            </p>
+            <p>
+              Dentro de nuestro proceso de observación nos centramos
+              principalmente en el área de tecnología ya que bajo nuestro
+              criterio es una de las estructuras pilares para el correcto
+              funcionamiento de la empresa. En el área del Centro Estadal de
+              Despacho (CED) recapitulamos una serie de problemáticas en cuanto
+              a la estructura tecnológica, se necesitan de equipos más actuales
+              los cuales suplan las necesidades de mejor manera, uno de los
+              equipos los cuales deben actualizarse son los servidores; el
+              problema que se presenta es que los servidores están puesto en
+              ordenadores los cuales cuentan con sistema operativos los cuales
+              culminaron su vida útil como lo es Windows XP, lo cual supone una
+              gran brecha de problemas en la seguridad del sistema, la causa
+              principal de esto es el Hardware de los equipos, ya que los
+              ordenadores que solo poseen 2GB ram e incluso algunos de estos 1GB
+              ram, además de no contar con procesadores que sean capaces de
+              realizar distintos procesos de manera eficiente.
+            </p>
+            <p>
+              Por ejemplo, hay un servidor que se conecta con el área de Centro
+              Estadal de Despacho el cual tiene una base de datos SQL en el cual
+              reside un programa de sistema integral de atención de reclamos,
+              dicho sistema lo llevan usando desde el año 2005 en esta área
+              junto a otras dos más, dependiendo del uso que se le vaya a dar.
+              En el CDE se encarga de planificar y recibir los reportes los
+              cuales son guardados, bien sea los cortes programados, cortes no
+              programados, cortes rutinarios, entre otros. Debido a la diversa
+              cantidad de procesos e información que se debe almacenar y
+              consultar, el rendimiento del equipo no es óptimo.
+            </p>
+            <p>
+              Cabe destacar que el Centro Estadal de Despacho si posee algunos
+              equipos los cuales son capaces de cumplir con las tareas, pero
+              hace falta invertir en mejoría en estos equipos para poder
+              desarrollar mejores métodos de manejo de los procesos en dicha
+              área, ya que entendemos que lo fundamental en un área tecnológica
+              es la facilidad de escalabilidad. Ahora bien, ¿Cómo se maneja la
+              información dentro del área del CDE? Tenemos el control de
+              reclamos; donde las personas hacen su reporte para un problema de
+              transformador o algún problema en el sector. Además, tenemos el
+              área de Recursos Humanos en la cual se encuentra un organigrama la
+              cual cuenta con una estructura dedatos en forma de árbol que
+              indica que cada área depende de la otras dentro de la empresa.
+            </p>
+            <p>
+              Dentro de nuestro estudio también nos surgió la siguiente
+              incógnita y es ¿Cómo se gestionan a nivel tecnológico? Bien,
+              muchas de las informaciones se gestionan en ordenadores, pero
+              también se trabaja por escrito ya que la empresa no cuenta con un
+              sistema de impresoras en óptimas condiciones, lo cual
+              definitivamente ralentiza el proceso de almacenado de información
+              y da pie a una potencial degradación de los datos.
+            </p>
+            <p>
+              En cuanto al área de telecomunicaciones se cumplen con diversas
+              rutinas y estándares, como por ejemplo el de red, la cual está
+              sujeta al estándar 802.11 que es el de Wi-Fi. Poseen 2 tipos de
+              proveedores de internet, una la cual es CANTV que es la interna de
+              la empresa y la segunda que provee AIRTEK la cual sería la
+              corporativa.
+            </p>
+            <p>
+              Es importante mencionar que no toda la información que maneja la
+              sede de la empresa de Corpoelec se gestiona directamente desde el
+              edificio, sino que se gestiona desde el ministerio de Zulia y
+              Caracas, donde tienen su relación en ciertos procesos tales como
+              nómina, recursos humanos, servidores y redes con el edificio sede
+              de Corpoelec situado en Falcón-Coro, siendo la sede del Zulia la
+              cual comparte principalmente procesos y gestión con está.
+            </p>
+            <p>
+              Consideramos fundamental autonomizar procesos en la parte de
+              informática ya que de esta manera facilitaría mucho la atención de
+              problemas y resolución de los mismos, para esto habría que
+              priorizar inversión en el equipo tecnológico, siendo prioridad un
+              servidor el cual cuente con la potencia suficiente para mantener y
+              escalar el sistema; dicho servidor debería poseer procesadores
+              Intel Xeon Scalable o AMD EPYC, además contar con suficiente
+              memoria RAM siendo el mínimo 16 GB para que tenga mayor capacidad
+              de memoria temporal, además de acondicionar una sala para
+              resguardar tanto la seguridad informática como la refrigeración
+              del equipo, ya que el servidor se encuentra encendido día y noche.
+              Si bien pudimos observar que la infraestructura es suficiente para
+              realizar las labores básicas, consideramos que no essuficiente
+              para llevar a cabo trabajos avanzados como lo son; programación o
+              algún tipo de creación de servidor de organización en cuanto a la
+              estructura de la red.
+            </p>
+            <p>
+              En el área de la informática anteriormente trabajaban con un
+              sistema SCADA que a pesar de ser tecnología vieja funcionaba
+              bastante bien porque era en tiempo real, está se encuentra
+              inhabilitada actualmente. Dicho sistema tenía una comunicación
+              directa con los circuitos que contaban con un activador, los
+              cuales al momento de disparar el circuito esté recibía un mensaje
+              y entraba en comunicación directa con este sistema de SCADA. Cabe
+              destacar que también que se controlaba desde otros ordenadores
+              solamente especializados para ello, lo cual distribuía de manera
+              óptima los recursos. Ahora bien, si dicho sistema se habilitara a
+              día de hoy, se necesitarían actualizar los equipos ya que la carga
+              de tareas e información es mayor.
+            </p>
+            <p>
+              En cuanto a la infraestructura de red esta se encuentra en buen
+              estado, funciona a buenas velocidades lo cual facilita el trabajo
+              en las distintas áreas de la sede. Cuentan con teléfonos propios
+              que están configuradas en modo IP que funcionan más que todo de
+              manera interna en la empresa, los cuales sólo tienen un límite de
+              número a los cuales se pueden llamar, no se puede llamar ni a
+              Movilnet, Movistar o Digitel, tienen unos códigos para llamarse
+              entre los mismos teléfonos.
+            </p>
+            <p>
+              En la parte de planificación, se gestionan algunas cosas de manera
+              escrita al hacer uso de pizarras, lo cual se podría mejorar usando
+              softwares de planificación de tares y objetivos. Además, tenemos
+              la parte de solicitud de equipos, si se llega a necesitar de
+              equipos se debe realizar una solicitud directamente a Zulia o
+              Caracas, más específicamente al estado Zulia y ellos se encargan
+              de hacer llegar los equipos necesarios, estos se llevan los
+              equipos desactualizados o que se encuentran averiados.
+            </p>
+            <p>
+              Pero eso es algo que en la actualidad no ocurre con la suficiente
+              frecuencia, ya que no cuentan con suficientes equipos y cuando
+              disponen de estos, son de bajos recursos. Por ejemplo,
+              recientemente se proveyó un ordenador con un procesador i3 de
+              segunda generación, con 2 GB de RAM y un disco duro de 48 GB, el
+              cual no fue suficiente para la cantidad de información a
+              almacenar.
+            </p>
+            <p>
+              Por lo cual, entendiendo en contexto de la infraestructura en
+              empresa de Corpoelec situada en el estado Falcón, ciudad de Coro.
+              Nuestro equipo brinda las siguientes recomendaciones:
+            </p>
+            <p>
+              Actualizar la infraestructura tecnológica priorizando equipos en
+              condiciones que no solo cumplan con las tareas, sino que permitan
+              la expansión del sistema, lo cual es un principio fundamental en
+              el área de IT. Además, es importante implementar mayor seguridad
+              informática no sólo a nivel técnico sino también a nivel humano,
+              ya que muchos de los trabajadores han sufrido hackeos que a pesar
+              que la empresa posee un email corporativo estos no se hacen
+              responsables de los correos que les lleguen a otras personas, bien
+              sea por Gmail o Hotmail. Si bien es cierto que la red interna de
+              la empresa no ha sufrido de ataques masivos, esta no es muy
+              segura.
+            </p>
+            <p>
+              Consideramos que podría ser útil reactivar el sistema antiguo
+              SCADA y actualizar el sistema CIADA, el cual actualmente se
+              encuentra en proceso de desarrollo, este podrá usarse en múltiples
+              dispositivos como lo son los teléfonos y las computadoras. El
+              CIADA es un sistema que fue creado en el 2004, es por ello que se
+              necesita eliminar funciones, optimizar procesos y mejorar el
+              funcionamiento de éste, por lo cual la actualización se está
+              centrando en esta premisa, aún no sabemos cuándo podrá llegar a
+              implementarse ya que se está necesitando más equipos de los que
+              originalmente esté necesitaba.
+            </p>
+            <p>
+              En cuanto al área de telecomunicaciones, se deben actualizar los
+              dispositivos de comunicaciones, a unos que permitan grabar las
+              operaciones que se gestionan entre los operadores, ya que existen
+              ciertas operaciones y maniobras en las cuales ocurren accidentes y
+              no se cuenta con un respaldo de las conversaciones con los
+              operadores.
+            </p>
+            <p>
+              Por último, pero no por ello menos importante, hacer usos de
+              sistemas operativos actualizados y que reciban soporte, ya que los
+              sistemas operativos que se manejan actualmente facilitan una
+              brecha de seguridad. Sería bueno implementar un sistema operativo
+              como Linux el cual es bastante bueno por ser un Software libre el
+              cual se encuentra en constante actualización o por contra parte,
+              una versión más avanzada de Windows la cual cuente con mejoras de
+              seguridad, estabilidad y fiabilidad.
+            </p>
+
+            <h2>Imágenes:</h2>
+
+            <div className="md:grid grid-cols-2 gap-10">
+              {corpoImagens.map((image, index) => (
+                <Image
+                  src={image}
+                  alt={`Corpoelect imagen ${index + 1}`}
+                  key={image.src}
+                  quality={100}
+                  className="h-full object-cover"
+                />
+              ))}
+            </div>
+            <h2>Videos:</h2>
+
+            <div style={{ padding: "56.21% 0 0 0", position: "relative" }}>
+              <iframe
+                src="https://www.dropbox.com/scl/fi/zsk07il1g936iaouizea1/EDT-v2.mp4?rlkey=2wesdeftrkprnll2jerv02x13&st=zwgdakdm&raw=1"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+                title="Secretaria de Salud del Estado Falcón - Podcast"
+              ></iframe>
+            </div>
+          </>
+        }
+      />
+    ),
+  },
+  {
+    id: 4,
     content: (
       <Article
         title="Procesos Informáticos y Gerenciales en la Secretaria de Salud del Estado Falcón"
@@ -1052,7 +1356,7 @@ const slides: SlideType[] = [
     },
   },
   {
-    id: 4,
+    id: 5,
     content: <Laberinto />,
     thumbnail: {
       title: "Laberinto",
